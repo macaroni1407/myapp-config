@@ -5,10 +5,10 @@
 replicaCount: 5
 
 image:
-  repository: rockman88v/demoapp
+  repository: nguyen22002/myapp
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 7
+  tag: v1
 
 imagePullSecrets: []
 nameOverride: ""
@@ -41,13 +41,13 @@ service:
   port: 80
 
 ingress:
-  enabled: true
+  enabled: false
   className: "nginx"
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: demoapp.viettq.com
+    - host: demoapp.nguyen.com
       paths:
         - path: /
           pathType: ImplementationSpecific
